@@ -48,7 +48,7 @@ namespace WpfApplication5
             ItemCache.AddOrUpdate(new ItemVm(5));
 
             FavoritesFilterController = new FilterController<IItemVm>(x => x.Favorite);
-            AllFilterController = new FilterController<IItemVm>(x => !string.IsNullOrEmpty(x.Header));
+            AllFilterController = new FilterController<IItemVm>(x => x.Id > 0);
 
             var allFilterCache = ItemCache.Connect()
                 .Filter(AllFilterController)
