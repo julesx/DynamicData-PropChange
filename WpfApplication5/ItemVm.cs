@@ -28,9 +28,10 @@ namespace WpfApplication5
         }
         public long Id { get; set; }
 
-        public ItemVm(string header)
+        public ItemVm(long id)
         {
-            Header = header;
+            Id = id;
+            Header = "Option " + Id;
         }
     }
 }

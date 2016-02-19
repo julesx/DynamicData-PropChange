@@ -41,14 +41,14 @@ namespace WpfApplication5
             FavoriteItems = new ObservableCollectionExtended<IItemVm>();
 
             ItemCache = new SourceCache<IItemVm, int>(itemVm => (int)itemVm.Id);
-            ItemCache.AddOrUpdate(new ItemVm("option 1"));
-            ItemCache.AddOrUpdate(new ItemVm("option 2"));
-            ItemCache.AddOrUpdate(new ItemVm("option 3"));
-            ItemCache.AddOrUpdate(new ItemVm("option 4"));
-            ItemCache.AddOrUpdate(new ItemVm("option 5"));
+            ItemCache.AddOrUpdate(new ItemVm(1));
+            ItemCache.AddOrUpdate(new ItemVm(2));
+            ItemCache.AddOrUpdate(new ItemVm(3));
+            ItemCache.AddOrUpdate(new ItemVm(4));
+            ItemCache.AddOrUpdate(new ItemVm(5));
 
             FavoritesFilterController = new FilterController<IItemVm>(x => x.Favorite);
-            AllFilterController = new FilterController<IItemVm>(x => x.Id == 0);
+            AllFilterController = new FilterController<IItemVm>(x => !string.IsNullOrEmpty(x.Header));
 
             var allFilterCache = ItemCache.Connect()
                 .Filter(AllFilterController)

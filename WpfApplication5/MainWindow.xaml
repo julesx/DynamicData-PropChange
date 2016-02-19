@@ -23,11 +23,11 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         
-        <ListBox ItemsSource="{Binding AllItems}" ItemTemplate="{StaticResource ListBoxItemTemplate}">
+        <ListBox ItemsSource="{Binding AllItems}" ItemTemplate="{StaticResource ListBoxItemTemplate}" Height="200">
             
         </ListBox>
 
-        <ListBox Grid.Column="1" ItemsSource="{Binding FavoriteItems}" ItemTemplate="{StaticResource ListBoxItemTemplate}">
+        <ListBox Grid.Column="1" ItemsSource="{Binding FavoriteItems}" ItemTemplate="{StaticResource ListBoxItemTemplate}" Height="200">
             
         </ListBox>
     </Grid>
