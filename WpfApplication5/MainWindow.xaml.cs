@@ -26,9 +26,7 @@ namespace WpfApplication5
             ItemCache = new SourceCache<IItemVm, int>(itemVm => (int)itemVm.Id);
 
             for (var i = 0; i < 345; i++)
-            {
                 ItemCache.AddOrUpdate(new ItemVm(i));
-            }
 
             MySorter = new MySorter();
             AllFilterController = new FilterController<IItemVm>(x => !string.IsNullOrEmpty(x.Header));
