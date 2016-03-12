@@ -17,20 +17,19 @@
     </Window.Resources>
     
     
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+    <DockPanel LastChildFill="False">
+        
+        <DockPanel LastChildFill="False" VerticalAlignment="Center">
+            <Button Content="Name" Click="ButtonBase_OnClick" DockPanel.Dock="Top" />
+            <Button Content="Id" Click="IdClicked" DockPanel.Dock="Top" />
+        </DockPanel>
         
         <ListBox ItemsSource="{Binding AllItems}" ItemTemplate="{StaticResource ListBoxItemTemplate}" Height="200">
             
         </ListBox>
 
-        <ListBox Grid.Column="1" ItemsSource="{Binding FavoriteItems}" ItemTemplate="{StaticResource ListBoxItemTemplate}" Height="200">
-            
-        </ListBox>
-    </Grid>
+    </DockPanel>
+    
 </Window>
 
     
