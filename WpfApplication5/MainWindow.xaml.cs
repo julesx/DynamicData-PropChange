@@ -33,12 +33,12 @@ namespace WpfApplication5
             SortController = new SortController<IItemVm>(MySorter);
 
             ItemCache
-                .Connect()
+                        .Connect()
                 .Filter(AllFilterController)
                 .Sort(SortController)
                 .Top(2000)
-                .Bind(AllItems)
-                .Subscribe();
+                        .Bind(AllItems)
+                        .Subscribe();
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
